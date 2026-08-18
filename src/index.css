@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap');
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #17140f;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Raleway', sans-serif;
+}
+
+::selection {
+  background: #7c8a4e;
+  color: #0f130a;
+}
+
+a {
+  color: #c3b184;
+  text-decoration: none;
+}
+a:hover {
+  color: #e6d8b4;
+}
+
+@keyframes kenburns {
+  0% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1.16);
+  }
+}
+
+/* Home / complejo cards: image zoom + arrow shift on hover */
+.compCard {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.compCard:hover {
+  transform: translateY(-6px);
+}
+.compImg {
+  transition: transform 0.6s ease;
+}
+.compCard:hover .compImg {
+  transform: scale(1.09);
+}
+
+/* Arandú gallery hover */
+.galItem img {
+  transition: transform 0.6s ease;
+}
+.galItem:hover img {
+  transform: scale(1.07);
+}
+.galItem:hover .galOverlay {
+  background: rgba(30, 24, 10, 0.28) !important;
+}
+.galItem:hover .galIcon {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+/* Testimonials marquee */
+@keyframes marqueeX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 8px));
+  }
+}
+.marqueeTrack {
+  animation: marqueeX 40s linear infinite;
+}
+.marqueeWrap:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+/* Cabin modal: stack image over content below 720px */
+@media (max-width: 720px) {
+  .candeModalTop {
+    grid-template-columns: 1fr !important;
+  }
+  .candeModalTop > div:first-child {
+    min-height: 0 !important;
+    aspect-ratio: 4 / 5;
+  }
+}
