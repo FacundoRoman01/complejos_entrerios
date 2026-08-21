@@ -13,20 +13,28 @@ export function SceneTransition() {
 
   return (
     <div ref={stageRef} data-scene-stage style={{ position: 'relative', height: '100vh', overflow: 'hidden', background: '#f5efe2' }}>
-      {/* SCENE 0 · PILETA */}
+      {/* SCENE 0 · DESCRIPCIÓN Y CARACTERÍSTICAS (Reemplazado con el texto de la imagen) */}
       <div data-scene="0" style={{ position: 'absolute', inset: 0 }}>
         <div
           data-half="left"
           style={{ position: 'absolute', top: 0, left: 0, width: '50%', height: '100%', transform: 'translateY(0)', transition: CUBIC_TRANSITION, background: '#f5efe2', display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}
         >
-          <div style={{ width: '100%', maxWidth: 520, padding: '0 clamp(30px,4.5vw,80px)' }}>
-            <div style={{ fontSize: 12, letterSpacing: '0.4em', textTransform: 'uppercase', color: '#3f6b3a', marginBottom: 22 }}>La pileta climatizada</div>
-            <h2 style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 700, fontSize: 'clamp(34px,5vw,74px)', lineHeight: 1, margin: 0, color: '#22331b' }}>
-              Una pileta para disfrutar en cualquier momento.
+          <div style={{ width: '100%', maxWidth: 560, padding: '0 clamp(30px,4.5vw,80px)' }}>
+            <div style={{ fontSize: 12, letterSpacing: '0.4em', textTransform: 'uppercase', color: '#3f6b3a', marginBottom: 18 }}>Bungalow Cande</div>
+            <h2 style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 700, fontSize: 'clamp(32px,4.2vw,62px)', lineHeight: 1.02, margin: 0, color: '#22331b' }}>
+              Descansar, disfrutar y sentirte como en casa.
             </h2>
-            <p style={{ fontSize: 15, lineHeight: 1.85, color: '#3c4a34', maxWidth: 440, margin: '28px 0 0', fontWeight: 300 }}>
-              El corazón del complejo: agua templada, resguardo del clima y un espacio pensado para el relax durante todo el año.
+            <p style={{ fontSize: 14, lineHeight: 1.75, color: '#3c4a34', maxWidth: 480, margin: '22px 0 0', fontWeight: 300 }}>
+              Un complejo de tres bungalows con capacidad para hasta 4 personas cada uno, ideales para disfrutar en pareja, en familia o con amigos. Ubicado camino a las Termas, combinan comodidad y tranquilidad en espacios cálidos, completos y preparados para una estadía confortable. Su principal atractivo: una pileta climatizada por caldera para disfrutar durante todo el año, sin importar el clima ni la época.
             </p>
+            
+            {/* Características con íconos tal cual la imagen */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px 24px', marginTop: 24, fontSize: 12, color: '#3c4a34', fontWeight: 500 }}>
+              <span>🏡 3 bungalows</span>
+              <span>👥 Hasta 4 personas c/u</span>
+              <span>🏊 Pileta climatizada por caldera</span>
+              <span>📍 Camino a las Termas</span>
+            </div>
           </div>
         </div>
         <div
@@ -39,7 +47,7 @@ export function SceneTransition() {
         </div>
       </div>
 
-      {/* SCENE 1 · UBICACIÓN */}
+      {/* SCENE 1 · UBICACIÓN (Intacto) */}
       <div data-scene="1" style={{ position: 'absolute', inset: 0 }}>
         <div
           data-half="left"
@@ -53,11 +61,11 @@ export function SceneTransition() {
               encontrás.
             </h2>
             <p style={{ fontSize: 15, lineHeight: 1.8, color: '#3c4a34', margin: '24px 0 0', maxWidth: 420, fontWeight: 300 }}>
-              Bungalows Cande · [Dirección completa, localidad, Entre Ríos].
+              Bungalows Cande · Camino a las Termas, Villa Elisa, Entre Ríos.
             </p>
             <a
               data-cta=""
-              href="https://maps.google.com/?q=Bungalows+Cande+Entre+Rios"
+              href="https://maps.google.com/?q=Bungalows+Cande+Villa+Elisa+Entre+Rios"
               target="_blank"
               rel="noopener"
               style={{ display: 'inline-block', marginTop: 28, border: '1px solid rgba(63,107,58,0.55)', color: '#22331b', padding: '15px 28px', borderRadius: 40, fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', textDecoration: 'none' }}
@@ -73,7 +81,7 @@ export function SceneTransition() {
           <div data-mapanim style={{ width: '100%', maxWidth: 600, aspectRatio: '16/12', maxHeight: '72vh', position: 'relative', borderRadius: 14, overflow: 'hidden', boxShadow: '0 24px 50px -24px rgba(20,40,15,0.5)' }}>
             <iframe
               title="Ubicación Bungalows Cande"
-              src="https://www.google.com/maps?q=Bungalows%20Cande%20Entre%20Rios&output=embed"
+              src="https://www.google.com/maps?q=Bungalows%20Cande%20Villa%20Elisa%20Entre%20Rios&output=embed"
               style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0 }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import type { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { useIsNavMobile } from '../hooks/useViewportWidth';
@@ -9,6 +10,21 @@ interface NavProps {
 
 export function Nav({ onToggleMenu, showBackButton = false }: NavProps) {
   const isMobile = useIsNavMobile();
+  const [scrolled, setScrolled] = useState(false);
+
+  // Detectar el scroll de la página
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 30) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <nav
@@ -22,7 +38,13 @@ export function Nav({ onToggleMenu, showBackButton = false }: NavProps) {
         alignItems: 'flex-start',
         justifyContent: 'space-between',
         padding: '22px clamp(20px,4vw,64px)',
-        background: 'linear-gradient(180deg, rgba(12,14,8,0.55), rgba(12,14,8,0))',
+        background: scrolled 
+          ? 'rgba(12, 14, 8, 0.82)' 
+          : 'linear-gradient(180deg, rgba(12,14,8,0.55), rgba(12,14,8,0))',
+        backdropFilter: scrolled ? 'blur(10px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(10px)' : 'none',
+        boxShadow: scrolled ? '0 4px 20px rgba(0,0,0,0.3)' : 'none',
+        transition: 'background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease',
         fontFamily: "'Raleway', sans-serif",
       }}
     >
@@ -57,7 +79,7 @@ export function Nav({ onToggleMenu, showBackButton = false }: NavProps) {
       </div>
 
       {!isMobile && (
-        <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(18px,2.4vw,38px)', height: 38 /* Match logo height */ }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(18px,2.4vw,38px)', height: 38 }}>
           <Link to="/" style={navLinkStyle}>Inicio</Link>
           <Link to="/la-loma" style={navLinkStyle}>La Loma</Link>
           <Link to="/cande" style={navLinkStyle}>Bungalows Cande</Link>

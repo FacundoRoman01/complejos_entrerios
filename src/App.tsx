@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { LightboxProvider } from './hooks/useLightbox';
@@ -16,6 +16,11 @@ import { BungalowsCande } from './pages/BungalowsCande';
 function AppContent() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Forzar el scroll al inicio en cada cambio de página
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const showBackButton = location.pathname !== '/';
 

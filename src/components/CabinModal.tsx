@@ -11,7 +11,6 @@ interface CabinModalProps {
   onWhatsApp: () => void;
 }
 
-/** Shared cabin-detail modal, reused verbatim by both La Loma and Bungalows Cande. */
 export function CabinModal({ cabin, gallery, activeSlide, onClose, onPrev, onNext, onGoTo, onWhatsApp }: CabinModalProps) {
   if (!cabin) return null;
   const activeImg = gallery[activeSlide] ?? gallery[0];
@@ -28,13 +27,24 @@ export function CabinModal({ cabin, gallery, activeSlide, onClose, onPrev, onNex
         display: 'flex',
         justifyContent: 'center',
         overflowY: 'auto',
-        padding: 'clamp(10px,3vh,44px) clamp(10px,3vw,30px)',
+        // Aumentamos el padding superior para que empiece bien por debajo del header fijo
+        padding: 'clamp(130px, 18vh, 170px) clamp(10px, 3vw, 30px) clamp(40px, 6vh, 80px)',
       }}
     >
       <div
         onClick={(e) => e.stopPropagation()}
         className="candeModalTop-parent"
-        style={{ position: 'relative', width: 'min(920px,100%)', height: 'max-content', background: '#232b18', borderRadius: 20, overflow: 'hidden', boxShadow: '0 40px 90px -30px rgba(0,0,0,0.7)' }}
+        style={{ 
+          position: 'relative', 
+          width: 'min(920px,100%)', 
+          height: 'max-content', 
+          background: '#232b18', 
+          borderRadius: 20, 
+          overflow: 'hidden', 
+          boxShadow: '0 40px 90px -30px rgba(0,0,0,0.7)',
+          // Margen extra de seguridad por si acaso
+          marginBottom: '40px' 
+        }}
       >
         <button
           onClick={onClose}
@@ -96,7 +106,7 @@ export function CabinModal({ cabin, gallery, activeSlide, onClose, onPrev, onNex
         </div>
 
         <div style={{ padding: 'clamp(26px,4vw,50px)', paddingTop: 'clamp(20px,2.4vw,30px)', color: '#e9ecdd' }}>
-          <div style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#a7b378' }}>Lo distintivo</div>
+          {/* <div style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#a7b378' }}>Lo distintivo</div>
           <div style={{ height: 1, background: 'rgba(195,209,154,0.2)', margin: '16px 0 4px' }} />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: 0 }}>
             {cabin.distintivo.map((d, i) => (
@@ -104,7 +114,7 @@ export function CabinModal({ cabin, gallery, activeSlide, onClose, onPrev, onNex
                 {d}
               </div>
             ))}
-          </div>
+          </div> */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 'clamp(24px,4vw,50px)', marginTop: 24 }}>
             <div>
               <div style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#a7b378', marginBottom: 14 }}>Comodidades</div>
@@ -115,7 +125,7 @@ export function CabinModal({ cabin, gallery, activeSlide, onClose, onPrev, onNex
               </div>
             </div>
             <div>
-              <div style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#a7b378', marginBottom: 14 }}>Dormir</div>
+              <div style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#a7b378', marginBottom: 14 }}>Beneficios</div>
               <div style={{ border: '1px solid rgba(195,209,154,0.2)', borderRadius: 14, padding: '22px 24px', fontFamily: "'Raleway',sans-serif", fontStyle: 'italic', fontSize: 20, lineHeight: 1.4, color: '#dfe4cf' }}>
                 {cabin.dormir}
               </div>

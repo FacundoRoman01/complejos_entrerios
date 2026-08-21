@@ -37,33 +37,106 @@ export function Home() {
       exit="exit"
       data-page style={{ position: 'relative', zIndex: 1 }}
     >
-      {/* HERO */}
-      <section style={{ ...stackSection(1), minHeight: '100vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden', background: '#17140f' }}>
-        <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
-          <ImageCrossfade images={heroHomeSlides} alt="Complejos Entre Ríos" fadeMs={1300} kenBurns />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(18,22,12,0.55) 0%, rgba(18,22,12,0.15) 40%, rgba(15,18,10,0.85) 100%)' }} />
-        </div>
-        <div style={{ position: 'relative', padding: '0 clamp(20px,5vw,80px) clamp(60px,9vh,110px)', maxWidth: 1000 }}>
-          <div style={{ fontSize: 12, letterSpacing: '0.42em', textTransform: 'uppercase', color: '#c3b184', marginBottom: 26 }}>Cabañas &amp; alojamientos · Entre Ríos</div>
-          <WordReveal as="h1" style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 700, fontSize: 'clamp(46px,8.5vw,120px)', lineHeight: 0.94, letterSpacing: '-0.015em', margin: 0, color: '#f6f3ea' }}>
-            {'Un lugar para'}
-            <br />
-            {'bajar el ritmo.'}
-          </WordReveal>
-          <p style={{ fontFamily: "'Raleway',sans-serif", fontStyle: 'italic', fontWeight: 600, fontSize: 'clamp(20px,2.4vw,30px)', color: '#d8dcc4', margin: '22px 0 0', maxWidth: 560 }}>
-            Tres complejos, tres formas de habitar el paisaje entrerriano.
-          </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, marginTop: 40 }}>
-            <button onClick={() => scrollToId('los-complejos')} style={{ cursor: 'pointer', border: 'none', background: '#7c8a4e', color: '#f5f3e8', padding: '16px 30px', borderRadius: 40, fontSize: 12, letterSpacing: '0.18em', textTransform: 'uppercase' }}>
-              Descubrir los complejos
-            </button>
-            <button onClick={openWhatsApp(waMessages.general)} style={{ cursor: 'pointer', background: 'none', border: '1px solid rgba(242,238,226,0.45)', color: '#f2eee2', padding: '16px 30px', borderRadius: 40, fontSize: 12, letterSpacing: '0.18em', textTransform: 'uppercase' }}>
-              Consultar por WhatsApp
-            </button>
-          </div>
-        </div>
-      </section>
+{/* HERO */}
+{/* HERO */}
+<section 
+  style={{ 
+    ...stackSection(1), 
+    minHeight: '100vh', 
+    display: 'flex', 
+    alignItems: 'center', 
+    overflow: 'hidden',
+    position: 'relative',
+    background: '#17140f'
+  }}
+>
+  <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
+    <ImageCrossfade images={heroHomeSlides} alt="Complejos Entre Ríos" fadeMs={1300} kenBurns />
+    <div 
+      style={{ 
+        position: 'absolute', 
+        inset: 0, 
+        background: 'linear-gradient(100deg, rgba(24,34,16,0.92) 0%, rgba(24,34,16,0.5) 50%, rgba(24,34,16,0.2) 100%)' 
+      }} 
+    />
+  </div>
 
+  {/* Contenedor con espaciado vertical centrado y seguro para el header */}
+  <div 
+    style={{ 
+      position: 'relative', 
+      padding: 'clamp(110px, 14vh, 150px) clamp(20px,5vw,80px) clamp(40px, 6vh, 60px)', 
+      maxWidth: 860,
+      width: '100%'
+    }}
+  >
+    <div style={{ fontSize: 12, letterSpacing: '0.4em', textTransform: 'uppercase', color: '#c3d19a', marginBottom: 22 }}>
+      Cabañas & alojamientos · Entre Ríos
+    </div>
+
+    <WordReveal 
+      as="h1" 
+      style={{ 
+        fontFamily: "'Raleway',sans-serif", 
+        fontWeight: 700, 
+        fontSize: 'clamp(38px, 6.8vw, 96px)', 
+        lineHeight: 0.96, 
+        letterSpacing: '-0.015em', 
+        margin: 0, 
+        color: '#f6f3ea' 
+      }}
+    >
+      {'Tres destinos para elegir,'}
+      <br />
+      {'cómo querés descansar.'}
+    </WordReveal>
+
+    <div style={{ width: 70, height: 1, background: '#c3d19a', margin: '30px 0' }} />
+
+    <p style={{ fontSize: 'clamp(15px, 1.8vw, 18px)', lineHeight: 1.85, color: '#dbe0ca', maxWidth: 520, fontWeight: 300, margin: 0 }}>
+      Descubrí nuestros alojamientos en distintos rincones de Entre Ríos y elegí la experiencia que más se adapte a vos.
+    </p>
+
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginTop: 34 }}>
+      <button 
+        onClick={() => scrollToId('los-complejos')} 
+        style={{ 
+          cursor: 'pointer', 
+          border: 'none', 
+          background: '#7c8a4e', 
+          color: '#f5f3e8', 
+          padding: '16px 30px', 
+          borderRadius: 40, 
+          fontSize: 12, 
+          letterSpacing: '0.18em', 
+          textTransform: 'uppercase',
+          fontWeight: 600
+        }}
+      >
+        Ver alojamientos
+      </button>
+      
+      <button 
+        onClick={openWhatsApp(waMessages.general)} 
+        style={{ 
+          cursor: 'pointer', 
+          background: 'rgba(24,34,16,0.3)', 
+          backdropFilter: 'blur(4px)', 
+          border: '1px solid rgba(195,209,154,0.45)', 
+          color: '#dbe0ca', 
+          padding: '16px 30px', 
+          borderRadius: 40, 
+          fontSize: 12, 
+          letterSpacing: '0.18em', 
+          textTransform: 'uppercase',
+          fontWeight: 600
+        }}
+      >
+        Consultar disponibilidad
+      </button>
+    </div>
+  </div>
+</section>
       {/* FONDO BOSQUE: complejos + intro marca */}
       <div
         style={{
@@ -117,9 +190,9 @@ export function Home() {
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 'clamp(16px,2vw,26px)' }}>
             {[
-              { ref: svc0, title: 'Descansar.', text: 'Silencio, verde y espacio para no hacer nada. El primer lujo es el tiempo.' },
-              { ref: svc1, title: 'Disfrutar.', text: 'Piletas, asados, tardes largas y noches tranquilas. Todo a tu ritmo.' },
-              { ref: svc2, title: 'Conectar.', text: 'Con la naturaleza, con los tuyos y con vos mismo. Sin apuro.' },
+              { ref: svc0, title: 'Descansar.', text: 'Bajar el ritmo y disfrutar de unos días para vos.' },
+              { ref: svc1, title: 'Disfrutar.', text: 'Momentos para compartir, disfrutar del aire libre y aprovechar cada espacio del complejo.' },
+              { ref: svc2, title: 'Desconectar.', text: 'Alejarte del ruido y bajar el ritmo para volver a conectar con lo simple.' },
             ].map((s) => (
               <div key={s.title} ref={s.ref.ref} style={{ ...s.ref.style, padding: 'clamp(34px,4vw,52px) clamp(28px,3vw,40px)', background: '#20291a', border: '1px solid rgba(195,177,132,0.18)', borderRadius: 16 }}>
                 <div style={{ fontFamily: "'Raleway',sans-serif", fontStyle: 'italic', fontWeight: 600, fontSize: 'clamp(30px,3.4vw,46px)', color: '#f4f1e6' }}>{s.title}</div>
