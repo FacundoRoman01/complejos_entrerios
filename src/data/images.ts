@@ -156,8 +156,11 @@ export const ARANDU_GALLERY_DORMITORIO = `https://res.cloudinary.com/gdsp19ht/im
 export const ARANDU_GALLERY_LIVING = `https://res.cloudinary.com/gdsp19ht/image/upload/${OPTIMIZED_PARAMS}/v1787182513/cabana_arandu7.webp`;
 
 
+export const ARANDU_GALLERY_BAÑO = `https://res.cloudinary.com/gdsp19ht/image/upload/${OPTIMIZED_PARAMS}/v1787182519/cabana_arandu4.webp`;
 
+export const ARANDU_GALLERY_PIEZA = `https://res.cloudinary.com/gdsp19ht/image/upload/${OPTIMIZED_PARAMS}/v1787182506/cabana_arandu11.webp`;
 
+export const ARANDU_GALLERY_LIVING2 = `https://res.cloudinary.com/gdsp19ht/image/upload/${OPTIMIZED_PARAMS}/v1787182525/cabana_arandu1.webp`;
 
 // Bungalows Cande
 export const CANDE_HERO_BG = `https://res.cloudinary.com/gdsp19ht/image/upload/${OPTIMIZED_PARAMS}/v1787185960/cande2_n.jpg`;

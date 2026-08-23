@@ -27,7 +27,7 @@ export function SceneTransition() {
             <p style={{ fontSize: 14, lineHeight: 1.75, color: '#3c4a34', maxWidth: 480, margin: '22px 0 0', fontWeight: 300 }}>
               Un complejo de tres bungalows con capacidad para hasta 4 personas cada uno, ideales para disfrutar en pareja, en familia o con amigos. Ubicado camino a las Termas, combinan comodidad y tranquilidad en espacios cálidos, completos y preparados para una estadía confortable. Su principal atractivo: una pileta climatizada por caldera para disfrutar durante todo el año, sin importar el clima ni la época.
             </p>
-            
+
             {/* Características con íconos tal cual la imagen */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px 24px', marginTop: 24, fontSize: 12, color: '#3c4a34', fontWeight: 500 }}>
               <span>🏡 3 bungalows</span>
@@ -78,15 +78,17 @@ export function SceneTransition() {
           data-half="right"
           style={{ position: 'absolute', top: 0, left: '50%', width: '50%', height: '100%', transform: 'translateY(-100%)', transition: CUBIC_TRANSITION, background: '#f5efe2', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', padding: 'clamp(30px,4vw,70px)' }}
         >
-          <div data-mapanim style={{ width: '100%', maxWidth: 600, aspectRatio: '16/12', maxHeight: '72vh', position: 'relative', borderRadius: 14, overflow: 'hidden', boxShadow: '0 24px 50px -24px rgba(20,40,15,0.5)' }}>
-            <iframe
-              title="Ubicación Bungalows Cande"
-              src="https://www.google.com/maps?q=Bungalows%20Cande%20Villa%20Elisa%20Entre%20Rios&output=embed"
-              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0 }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
+<div data-mapanim style={{ width: '100%', maxWidth: 600, aspectRatio: '16/12', maxHeight: '72vh', position: 'relative', borderRadius: 14, overflow: 'hidden', boxShadow: '0 24px 50px -24px rgba(20,40,15,0.5)' }}>
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3377.968020841436!2d-58.41232180000001!3d-32.151161599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b1d9d3248bc527%3A0x5e7ca30bbce1700f!2s%22Bungalows%20Cande%20Alojamientos%22!5e0!3m2!1ses-419!2sar!4v1787500407482!5m2!1ses-419!2sar" 
+    width="600" 
+    height="450" 
+    style={{ border: 0 }} 
+    allowFullScreen 
+    loading="lazy" 
+    referrerPolicy="no-referrer-when-downgrade"
+  />
+</div>
         </div>
       </div>
 

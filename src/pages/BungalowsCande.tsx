@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useReveal } from '../hooks/useReveal';
-import { useCabinModal } from '../hooks/useCabinModal';
+import { useModal } from '../context/ModalContext'; // <-- 1. Importamos el contexto global
 import { candeUnits, testimonialsCande } from '../data/mockData';
 import { CANDE_CTA_BG, CANDE_HERO_BG } from '../data/images';
 import { KenBurnsImage } from '../components/KenBurnsImage';
@@ -12,12 +12,22 @@ import { WordReveal } from '../components/WordReveal';
 import { openWhatsApp, waMessages } from '../utils/whatsapp';
 import { scrollToId } from '../utils/scroll';
 import { stackSection } from '../utils/stack';
+import { useState } from 'react'; // Asegúrate de tener useState importado
 
 export function BungalowsCande() {
   const alojHeader = useReveal<HTMLDivElement>();
   const ctaFinal = useReveal<HTMLDivElement>();
   const trackRef = useRef<HTMLDivElement>(null);
-  const modal = useCabinModal(candeUnits);
+  
+  // 2. Extraemos activeCabin, openModal y closeModal del contexto
+  const { activeCabin, openModal, closeModal } = useModal();
+  
+  // Estado local para el control de las fotos de la galería (carrusel del modal)
+  const [slide, setSlide] = useState(0);
+
+  // Cálculos para la galería basados en activeCabin
+  const gallery = activeCabin ? (activeCabin.gallery.length ? activeCabin.gallery : [activeCabin.img]) : [];
+  const activeSlide = gallery.length ? Math.min(slide, gallery.length - 1) : 0;
 
   const scrollCarousel = (dir: 1 | -1) => {
     const track = trackRef.current;
@@ -29,80 +39,79 @@ export function BungalowsCande() {
 
   return (
     <div data-page style={{ position: 'relative', zIndex: 1, background: '#f5efe2' }}>
- {/* HERO */}
-<section 
-  style={{ 
-    ...stackSection(1), 
-    minHeight: '100vh', 
-    display: 'flex', 
-    alignItems: 'center', 
-    overflow: 'hidden' 
-  }}
->
-  <KenBurnsImage src={CANDE_HERO_BG} alt="Bungalows Cande · sendero entre palmeras" durationS={24} />
-  <div 
-    style={{ 
-      position: 'absolute', 
-      inset: 0, 
-      background: 'linear-gradient(100deg, rgba(28,35,20,0.92) 0%, rgba(28,35,20,0.5) 50%, rgba(28,35,20,0.15) 100%)' 
-    }} 
-  />
+      {/* HERO */}
+      <section 
+        style={{ 
+          ...stackSection(1), 
+          minHeight: '100vh', 
+          display: 'flex', 
+          alignItems: 'center', 
+          overflow: 'hidden' 
+        }}
+      >
+        <KenBurnsImage src={CANDE_HERO_BG} alt="Bungalows Cande · sendero entre palmeras" durationS={24} />
+        <div 
+          style={{ 
+            position: 'absolute', 
+            inset: 0, 
+            background: 'linear-gradient(100deg, rgba(28,35,20,0.92) 0%, rgba(28,35,20,0.5) 50%, rgba(28,35,20,0.15) 100%)' 
+          }} 
+        />
 
-  {/* Contenedor con espacio superior agregado para evitar que lo tape el header */}
-  <div 
-    style={{ 
-      position: 'relative', 
-      padding: 'clamp(110px, 14vh, 150px) clamp(20px,5vw,80px) clamp(40px, 6vh, 60px)', 
-      maxWidth: 780 
-    }}
-  >
-    <div style={{ fontSize: 12, letterSpacing: '0.4em', textTransform: 'uppercase', color: '#b7c48a', marginBottom: 24 }}>
-      Bungalows Cande
-    </div>
-    
-    <WordReveal 
-      as="h1" 
-      style={{ 
-        fontFamily: "'Raleway',sans-serif", 
-        fontWeight: 700, 
-        fontSize: 'clamp(44px,7.5vw,104px)', 
-        lineHeight: 0.97, 
-        margin: 0, 
-        color: '#eef4f2' 
-      }}
-    >
-      {'Tu descanso'}
-      <br />
-      {'cerca, de'}
-      <br />
-      <span style={{ fontStyle: 'italic', color: '#a7d0d2' }}>las termas.</span>
-    </WordReveal>
+        <div 
+          style={{ 
+            position: 'relative', 
+            padding: 'clamp(110px, 14vh, 150px) clamp(20px,5vw,80px) clamp(40px, 6vh, 60px)', 
+            maxWidth: 780 
+          }}
+        >
+          <div style={{ fontSize: 12, letterSpacing: '0.4em', textTransform: 'uppercase', color: '#b7c48a', marginBottom: 24 }}>
+            Bungalows Cande
+          </div>
+          
+          <WordReveal 
+            as="h1" 
+            style={{ 
+              fontFamily: "'Raleway',sans-serif", 
+              fontWeight: 700, 
+              fontSize: 'clamp(44px,7.5vw,104px)', 
+              lineHeight: 0.97, 
+              margin: 0, 
+              color: '#eef4f2' 
+            }}
+          >
+            {'Tu descanso'}
+            <br />
+            {'cerca, de'}
+            <br />
+            <span style={{ fontStyle: 'italic', color: '#a7d0d2' }}>las termas.</span>
+          </WordReveal>
 
-    <div style={{ width: 70, height: 1, background: '#8a9a55', margin: '32px 0' }} />
+          <div style={{ width: 70, height: 1, background: '#8a9a55', margin: '32px 0' }} />
 
-    <p style={{ fontSize: 16, lineHeight: 1.85, color: '#d3dab9', maxWidth: 460, fontWeight: 300 }}>
-      Bienestar, servicios y una pileta climatizada interior compartida para disfrutar del agua en cualquier momento del año.
-    </p>
+          <p style={{ fontSize: 16, lineHeight: 1.85, color: '#d3dab9', maxWidth: 460, fontWeight: 300 }}>
+            Bienestar, servicios y una pileta climatizada interior compartida para disfrutar del agua en cualquier momento del año.
+          </p>
 
-    <button
-      onClick={() => scrollToId('alojamientos-cande')}
-      style={{ 
-        cursor: 'pointer', 
-        border: 'none', 
-        background: '#7c8a4e', 
-        color: '#f5f3e8', 
-        padding: '16px 30px', 
-        borderRadius: 40, 
-        marginTop: 34, 
-        fontSize: 12, 
-        letterSpacing: '0.18em', 
-        textTransform: 'uppercase' 
-      }}
-    >
-      Descubrir complejos
-    </button>
-  </div>
-</section>
+          <button
+            onClick={() => scrollToId('alojamientos-cande')}
+            style={{ 
+              cursor: 'pointer', 
+              border: 'none', 
+              background: '#7c8a4e', 
+              color: '#f5f3e8', 
+              padding: '16px 30px', 
+              borderRadius: 40, 
+              marginTop: 34, 
+              fontSize: 12, 
+              letterSpacing: '0.18em', 
+              textTransform: 'uppercase' 
+            }}
+          >
+            Descubrir complejos
+          </button>
+        </div>
+      </section>
 
       {/* ALOJAMIENTOS */}
       <section id="alojamientos-cande" style={{ ...stackSection(2), background: '#f5efe2', color: '#22331b', padding: 'clamp(70px,12vh,140px) clamp(20px,5vw,80px)' }}>
@@ -133,8 +142,15 @@ export function BungalowsCande() {
             ref={trackRef}
             style={{ display: 'flex', gap: 'clamp(20px,2.4vw,32px)', overflowX: 'auto', scrollSnapType: 'x mandatory', scrollBehavior: 'smooth', padding: '6px 0 14px', margin: '0 -6px', scrollbarWidth: 'none' }}
           >
-            {candeUnits.map((unit, i) => (
-              <CandeUnitCard key={unit.name} unit={unit} onOpenDetail={() => modal.open(i)} />
+            {candeUnits.map((unit) => (
+              <CandeUnitCard 
+                key={unit.name} 
+                unit={unit} 
+                onOpenDetail={() => {
+                  openModal(unit); // 3. Abrimos el modal globalmente
+                  setSlide(0);      // Reseteamos el slide al abrir
+                }} 
+              />
             ))}
           </div>
         </div>
@@ -166,15 +182,16 @@ export function BungalowsCande() {
         </div>
       </section>
 
-      {modal.cabin && (
+      {/* 4. Renderizamos el Modal con los datos del contexto */}
+      {activeCabin && (
         <CabinModal
-          cabin={modal.cabin}
-          gallery={modal.gallery}
-          activeSlide={modal.activeSlide}
-          onClose={modal.close}
-          onPrev={modal.prev}
-          onNext={modal.next}
-          onGoTo={modal.goTo}
+          cabin={activeCabin}
+          gallery={gallery}
+          activeSlide={activeSlide}
+          onClose={closeModal}
+          onPrev={() => setSlide((s) => (gallery.length ? (s - 1 + gallery.length) % gallery.length : 0))}
+          onNext={() => setSlide((s) => (gallery.length ? (s + 1) % gallery.length : 0))}
+          onGoTo={(i) => setSlide(i)}
           onWhatsApp={openWhatsApp(waMessages.cande)}
         />
       )}

@@ -171,13 +171,13 @@ export function Home() {
         <img src={TERMAS_ENTRE_RIOS} alt="Termas de Entre Ríos · vista aérea del parque termal" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(15,18,10,0.9), rgba(15,18,10,0.3))' }} />
         <div ref={destino.ref} style={{ ...destino.style, position: 'relative', padding: 'clamp(50px,7vw,110px)', maxWidth: 640 }}>
-          <div style={{ fontSize: 12, letterSpacing: '0.36em', textTransform: 'uppercase', color: '#c3b184', marginBottom: 22 }}>El destino</div>
+          {/* <div style={{ fontSize: 12, letterSpacing: '0.36em', textTransform: 'uppercase', color: '#c3b184', marginBottom: 22 }}>El destino</div> */}
           <h2 style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 700, fontSize: 'clamp(34px,5vw,68px)', lineHeight: 1.02, margin: 0, color: '#f4f1e6' }}>
             Hospedate con nosotros
             <br />
-            y disfrutá las termas
+            y disfrutá las termas con
             <br />
-            <span style={{ fontStyle: 'italic', color: '#c3b184' }}>con descuento.</span>
+            <span style={{ fontStyle: 'italic', color: '#c3b184' }}> descuento.</span>
           </h2>
           <p style={{ fontSize: 15, lineHeight: 1.85, color: '#c7cdb4', maxWidth: 440, margin: '24px 0 0', fontWeight: 300 }}>
             Alojándote en cualquiera de nuestros complejos accedés a un descuento exclusivo en la entrada a las termas. El plan perfecto para completar tu escapada.

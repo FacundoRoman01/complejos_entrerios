@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { LightboxProvider } from './hooks/useLightbox';
+import { ModalProvider, useModal } from './context/ModalContext'; // <-- Importa el contexto
 import { Nav } from './components/Nav';
 import { MobileMenu } from './components/MobileMenu';
 import { WhatsAppFloat } from './components/WhatsAppFloat';
@@ -16,8 +17,8 @@ import { BungalowsCande } from './pages/BungalowsCande';
 function AppContent() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { activeCabin } = useModal(); // <-- Obtenemos si hay una cabaña abierta
 
-  // Forzar el scroll al inicio en cada cambio de página
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
@@ -25,36 +26,37 @@ function AppContent() {
   const showBackButton = location.pathname !== '/';
 
   return (
-    <LightboxProvider>
-      <div style={{ fontFamily: "'Raleway',sans-serif", background: '#17140f', color: '#f2eee2', overflowX: 'hidden' }}>
+    <div style={{ fontFamily: "'Raleway',sans-serif", background: '#17140f', color: '#f2eee2', overflowX: 'hidden' }}>
+      {/* El Nav se oculta automáticamente si activeCabin existe (modal abierto) */}
+      {!activeCabin && (
         <Nav onToggleMenu={() => setMenuOpen((v) => !v)} showBackButton={showBackButton} />
-        <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
-        <WhatsAppFloat />
+      )}
+      
+      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
+      <WhatsAppFloat />
 
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/la-loma" element={<LaLoma />} />
-            <Route path="/arandu" element={<Arandu />} />
-            <Route path="/cande" element={<BungalowsCande />} />
-            {/* Las páginas 'UnitDetail' y 'Promotions' no estaban en la refactorización anterior,
-                así que las dejo comentadas. Deberías agregarlas si las necesitas.
-            <Route path="/promociones" element={<Promotions />} />
-            <Route path="/alojamiento/:id" element={<UnitDetail />} />
-            */}
-          </Routes>
-        </AnimatePresence>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="/la-loma" element={<LaLoma />} />
+          <Route path="/arandu" element={<Arandu />} />
+          <Route path="/cande" element={<BungalowsCande />} />
+        </Routes>
+      </AnimatePresence>
 
-        <Footer />
-        <WhatsAppMobileBar />
-        <Lightbox />
-      </div>
-    </LightboxProvider>
+      <Footer />
+      <WhatsAppMobileBar />
+      <Lightbox />
+    </div>
   );
 }
 
 export default function App() {
-  // AppContent está ahora dentro del BrowserRouter en main.tsx
-  // por lo que puede usar hooks como useLocation.
-  return <AppContent />;
+  return (
+    <LightboxProvider>
+      <ModalProvider> {/* <-- Envolvemos la app con el provider */}
+        <AppContent />
+      </ModalProvider>
+    </LightboxProvider>
+  );
 }
