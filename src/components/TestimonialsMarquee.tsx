@@ -1,19 +1,22 @@
 import type { CSSProperties } from 'react';
 import { useReveal } from '../hooks/useReveal';
-import type { Testimonial } from '../types';
 import { WordReveal } from './WordReveal';
 
+interface ReviewImageItem {
+  src: string;
+  alt: string;
+}
+
 interface TestimonialsMarqueeProps {
-  testimonials: Testimonial[];
-  /** 'loma' = cream card on cream section; 'light' = white cards on cream section (Arandú/Cande). */
+  testimonials: ReviewImageItem[];
   variant: 'loma' | 'light';
   eyebrowColor: string;
   style?: CSSProperties;
 }
 
 const THEMES = {
-  loma: { sectionBg: '#efe9db', sectionColor: '#26331d', cardBorder: 'rgba(38,51,29,0.1)', title: '#3a4a28', content: '#5b6349', star: '#e0a800', tagBorder: 'rgba(38,51,29,0.2)', tagText: '#5b6349', name: '#26331d', role: '#8a9270' },
-  light: { sectionBg: '#f5efe2', sectionColor: '#3b3322', cardBorder: 'rgba(120,100,50,0.18)', title: '#332c1d', content: '#6b6046', star: '#c1a877', tagBorder: 'rgba(120,100,50,0.3)', tagText: '#8a7a52', name: '#332c1d', role: '#a2946e' },
+  loma: { sectionBg: '#efe9db', sectionColor: '#26331d' },
+  light: { sectionBg: '#f5efe2', sectionColor: '#3b3322' },
 } as const;
 
 export function TestimonialsMarquee({ testimonials, variant, eyebrowColor, style }: TestimonialsMarqueeProps) {
@@ -30,31 +33,33 @@ export function TestimonialsMarquee({ testimonials, variant, eyebrowColor, style
           Quienes estuvieron, lo cuentan.
         </WordReveal>
       </div>
-      <div className="marqueeWrap" style={{ position: 'relative' }}>
-        <div className="marqueeTrack" style={{ display: 'flex', gap: 16, width: 'max-content' }}>
+      
+      {/* Contenedor del Scroll de Imágenes */}
+      <div className="marqueeWrap" style={{ position: 'relative', width: '100%' }}>
+        <div className="marqueeTrack" style={{ display: 'flex', gap: 20, width: 'max-content' }}>
           {testimonials.map((item, i) => (
             <div
               key={i}
               style={{
                 flex: '0 0 auto',
-                width: 'clamp(238px,72vw,340px)',
+                width: 'clamp(280px, 80vw, 380px)',
+                borderRadius: 18,
+                overflow: 'hidden',
                 background: '#fff',
-                border: `1px solid ${t.cardBorder}`,
-                borderRadius: 22,
-                padding: 'clamp(20px,5.5vw,28px)',
                 boxShadow: '0 18px 40px -26px rgba(38,51,29,0.4)',
+                border: '1px solid rgba(0,0,0,0.08)'
               }}
             >
-              <h4 style={{ fontFamily: "'Raleway',sans-serif", fontSize: 'clamp(20px,5.4vw,26px)', lineHeight: 1.12, margin: 0, color: t.title }}>{item.title}</h4>
-              <p style={{ fontSize: 14, lineHeight: 1.7, color: t.content, margin: '14px 0 0', fontWeight: 300 }}>{item.content}</p>
-              <div style={{ color: t.star, fontSize: 15, letterSpacing: 2, marginTop: 18 }}>★★★★★</div>
-              <span style={{ display: 'inline-block', marginTop: 16, fontSize: 11, letterSpacing: '0.06em', color: t.tagText, border: `1px solid ${t.tagBorder}`, borderRadius: 30, padding: '6px 14px' }}>
-                {item.tag}
-              </span>
-              <div style={{ marginTop: 20 }}>
-                <div style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontSize: 15, color: t.name }}>{item.name}</div>
-                <div style={{ fontSize: 13, color: t.role, marginTop: 2 }}>{item.role}</div>
-              </div>
+              <img 
+                src={item.src} 
+                alt={item.alt} 
+                style={{ 
+                  width: '100%', 
+                  height: 'auto', 
+                  display: 'block',
+                  objectFit: 'cover' 
+                }} 
+              />
             </div>
           ))}
         </div>

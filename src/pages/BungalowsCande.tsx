@@ -184,17 +184,17 @@ export function BungalowsCande() {
 
       {/* 4. Renderizamos el Modal con los datos del contexto */}
       {activeCabin && (
-        <CabinModal
-          cabin={activeCabin}
-          gallery={gallery}
-          activeSlide={activeSlide}
-          onClose={closeModal}
-          onPrev={() => setSlide((s) => (gallery.length ? (s - 1 + gallery.length) % gallery.length : 0))}
-          onNext={() => setSlide((s) => (gallery.length ? (s + 1) % gallery.length : 0))}
-          onGoTo={(i) => setSlide(i)}
-          onWhatsApp={openWhatsApp(waMessages.cande)}
-        />
-      )}
+  <CabinModal
+    cabin={activeCabin}
+    gallery={gallery}
+    activeSlide={activeSlide}
+    onClose={closeModal}
+    onPrev={() => setSlide((s) => (gallery.length ? (s - 1 + gallery.length) % gallery.length : 0))}
+    onNext={() => setSlide((s) => (gallery.length ? (s + 1) % gallery.length : 0))}
+    onGoTo={(i) => setSlide(i)}
+    complexName="Bungalows Cande" // <-- Le pasamos el nombre del complejo
+  />
+)}
     </div>
   );
 }

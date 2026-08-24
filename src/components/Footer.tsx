@@ -46,18 +46,42 @@ export function Footer() {
           </div>
 
           <div style={styles.linksColumn}>
-            <div style={styles.linksHeading}>Contacto</div>
+            <div style={styles.linksHeading}>Contacto & Redes</div>
             <div style={styles.linksList}>
               <span onClick={openWhatsApp(waMessages.general)} style={styles.link}>WhatsApp</span>
-              <span style={styles.disabledLink}>[ INSTAGRAM ]</span>
-              <span style={styles.disabledLink}>[ UBICACIÓN ]</span>
+              <a 
+                href="https://www.instagram.com/bungalowscande_cabanalaloma" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={styles.link}
+              >
+                Instagram (Cande & La Loma)
+              </a>
+              <a 
+                href="https://www.instagram.com/cabana_arandu" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={styles.link}
+              >
+                Instagram (Arandú)
+              </a>
             </div>
           </div>
 
         </div>
         <div style={styles.subFooter}>
-          <span>© 2026 Complejos Entre Ríos</span>
-          <span>Entre Ríos · Argentina</span>
+          <span>© 2026 Complejos Entre Ríos · Todos los derechos reservados</span>
+          <span>
+            Desarrollado por{' '}
+            <a 
+              href="https://mfstudio.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={styles.studioLink}
+            >
+              MF Studio
+            </a>
+          </span>
         </div>
       </footer>
     </div>
@@ -74,7 +98,7 @@ const styles = {
     justifyContent: 'space-between',
   } as CSSProperties,
   brandColumn: {
-    flex: '1 1 100%',
+    flex: '1 1 420px',
     maxWidth: '100%',
   } as CSSProperties,
   brandEyebrow: { fontSize: 9, letterSpacing: '0.42em', textTransform: 'uppercase', color: '#c3b184' } as CSSProperties,
@@ -86,11 +110,11 @@ const styles = {
   linksHeading: { fontSize: 11, letterSpacing: '0.24em', textTransform: 'uppercase', color: '#7c8a4e', marginBottom: 16 } as CSSProperties,
   linksList: { display: 'flex', flexDirection: 'column', gap: 11, fontSize: 14 } as CSSProperties,
   link: { cursor: 'pointer', color: '#cbceb8', textDecoration: 'none' } as CSSProperties,
-  disabledLink: { color: '#6f7758' } as CSSProperties,
+  studioLink: { color: '#c3b184', textDecoration: 'none', fontWeight: 500 } as CSSProperties,
   subFooter: {
     maxWidth: 1200,
     margin: '52px auto 0',
-    paddingTop: 24,
+    padding: '24px 0 0',
     borderTop: '1px solid rgba(195,177,132,0.14)',
     display: 'flex',
     flexWrap: 'wrap',
@@ -101,14 +125,3 @@ const styles = {
     color: '#6f7758',
   } as CSSProperties,
 };
-
-// Para lograr el efecto de la media query sin errores de tipo,
-// separamos los estilos y los aplicamos en el JSX, aunque en este caso
-// el uso de `flex-basis` con `minmax` en el grid original o un `flex-basis`
-// más inteligente en flexbox ya maneja la responsividad.
-// La siguiente corrección simplifica y logra el mismo objetivo visual.
-
-// @ts-ignore - Esta es una forma de simular una media query en style objects, pero no es estándar y da error en TS.
-// La mejor solución sería usar una librería CSS-in-JS o separar a un archivo .css.
-// Por ahora, ajustamos el flex para que se comporte como se espera.
-styles.brandColumn.flexBasis = '420px';

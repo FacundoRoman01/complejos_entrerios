@@ -5,7 +5,7 @@ import { aranduBeneficios, aranduGallery } from '../data/mockData';
 import { ARANDU_ARROYO_BG, ARANDU_HERO_BG } from '../data/images';
 import { motion } from 'framer-motion';
 import { KenBurnsImage } from '../components/KenBurnsImage';
-import { PhotoPlaceholder } from '../components/PhotoPlaceholder';
+// import { PhotoPlaceholder } from '../components/PhotoPlaceholder';
 import { GalleryItem } from '../components/GalleryItem';
 import { TestimonialsMarquee } from '../components/TestimonialsMarquee';
 import { WordReveal } from '../components/WordReveal';
@@ -242,22 +242,40 @@ export function Arandu() {
       </section>
 
 {/* EL ARROYO */}
-<section className="max-md:items-center max-md:justify-center max-md:text-center" style={{ ...stackSection(4), position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden' }}>
-  <img src={ARANDU_ARROYO_BG} alt="El arroyo · vista al agua desde el deck" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+<section 
+  className="relative flex flex-col md:flex-row items-center justify-center md:items-end md:justify-start min-h-screen overflow-hidden text-center md:text-left" 
+  style={{ ...stackSection(4) }}
+>
+  <img 
+    src={ARANDU_ARROYO_BG} 
+    alt="El arroyo · vista al agua desde el deck" 
+    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} 
+  />
   
-  {/* Gradiente ajustado para cubrir toda la pantalla uniformemente en mobile */}
-  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(18,15,10,0.7) 0%, rgba(18,15,10,0.5) 50%, rgba(18,15,10,0.9) 100%)' }} />
+  {/* Gradiente más intenso en mobile para asegurar la legibilidad del texto */}
+  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(18,15,10,0.75) 0%, rgba(18,15,10,0.6) 50%, rgba(18,15,10,0.92) 100%)' }} />
   
-  <div ref={arroyo.ref} className="max-md:mx-auto max-md:p-4" style={{ ...arroyo.style, position: 'relative', padding: 'clamp(50px,7vw,110px)', maxWidth: 640 }}>
-    {/* <div style={{ fontSize: 12, letterSpacing: '0.4em', textTransform: 'uppercase', color: '#c1a877', marginBottom: 22 }}>Un arroyo</div> */}
-    <h2 style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontStyle: 'italic', fontSize: 'clamp(36px,5.5vw,82px)', lineHeight: 1, margin: 0, color: '#efe7d4' }}>
+  <div 
+    ref={arroyo.ref} 
+    className="relative w-full max-w-[640px] px-6 py-12 md:p-[clamp(50px,7vw,110px)] flex flex-col items-center md:items-start z-10 my-auto md:my-0"
+    style={{ ...arroyo.style }}
+  >
+    <h2 style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 500, fontStyle: 'italic', fontSize: 'clamp(32px, 7vw, 82px)', lineHeight: 1.1, margin: 0, color: '#efe7d4' }}>
       Un arroyo para mirar,
       <br />
       disfrutar y recordar
     </h2>
-    <p className="max-md:mx-auto" style={{ fontSize: 15, lineHeight: 1.85, color: '#c4b998', maxWidth: 440, margin: '26px 0 0', fontWeight: 300 }}>
+    <p style={{ fontSize: 'clamp(14px, 1.8vw, 15px)', lineHeight: 1.85, color: '#c4b998', maxWidth: 440, margin: '20px 0 0', fontWeight: 300 }}>
       Uno de sus principales atractivos es su ubicación privilegiada: el fondo del complejo se encuentra junto a un arroyo que desemboca en el río Uruguay, creando un entorno especial para relajarse y conectar con el paisaje. 
     </p>
+
+    {/* Botón exclusivo para mobile (o visible en pantallas pequeñas) si deseas guiar al usuario directo a WhatsApp */}
+    <button
+      onClick={openWhatsApp(waMessages.arandu)}
+      className="md:hidden mt-6 cursor-pointer border-none bg-[#c1a877] text-[#17140f] px-6 py-3 rounded-full text-[11px] tracking-[0.18em] uppercase font-semibold"
+    >
+      Consultar por WhatsApp
+    </button>
   </div>
 </section>
 

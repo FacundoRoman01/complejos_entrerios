@@ -252,17 +252,17 @@ export function LaLoma() {
 
       {/* MODAL GLOBAL */}
       {activeCabin && (
-        <CabinModal
-          cabin={activeCabin}
-          gallery={gallery}
-          activeSlide={activeSlide}
-          onClose={closeModal}
-          onPrev={() => setSlide((s) => (gallery.length ? (s - 1 + gallery.length) % gallery.length : 0))}
-          onNext={() => setSlide((s) => (gallery.length ? (s + 1) % gallery.length : 0))}
-          onGoTo={(i) => setSlide(i)}
-          onWhatsApp={openWhatsApp(waMessages.loma)}
-        />
-      )}
+  <CabinModal
+    cabin={activeCabin}
+    gallery={gallery}
+    activeSlide={activeSlide}
+    onClose={closeModal}
+    onPrev={() => setSlide((s) => (gallery.length ? (s - 1 + gallery.length) % gallery.length : 0))}
+    onNext={() => setSlide((s) => (gallery.length ? (s + 1) % gallery.length : 0))}
+    onGoTo={(i) => setSlide(i)}
+    complexName="La Loma" // <-- Le pasamos el nombre del complejo
+  />
+)}
     </div>
   );
 }

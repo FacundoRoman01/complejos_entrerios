@@ -4,7 +4,6 @@ import type {
   FaqItem,
   GalleryImage,
   LomaCabin,
-  Testimonial,
 } from '../types';
 import * as img from './images';
 
@@ -58,6 +57,7 @@ export const lomaCabins: LomaCabin[] = [
     img: img.LOMA_CABANA_1,
     gallery: [img.LOMA_CABANA_CARD_1,img.LOMA_CABANA_CARD_2,img.LOMA_CABANA_CARD_3,img.LOMA_CABANA_CARD_4,img.LOMA_CABANA_CARD_5,img.LOMA_CABANA_CARD_6],
     pin: 'Se encuentra a 10 cuadras del centro.',
+    mapUrl: 'https://maps.app.goo.gl/ud7NdXpTAiJYNyy6A',
     capacidad: '4 personas',
     ambientes: 'Monoambiente',
     dormitorios: 'Cama matrimonial + cama marinera',
@@ -75,6 +75,7 @@ export const lomaCabins: LomaCabin[] = [
     img: img.LOMA_CABANA_2,
     gallery: [img.LOMA_CABANA2_CARD_1,img.LOMA_CABANA2_CARD_2,img.LOMA_CABANA2_CARD_3,img.LOMA_CABANA2_CARD_4,img.LOMA_CABANA2_CARD_5,img.LOMA_CABANA2_CARD_6,img.LOMA_CABANA2_CARD_7,img.LOMA_CABANA2_CARD_8,img.LOMA_CABANA2_CARD_9,img.LOMA_CABANA2_CARD_10,img.LOMA_CABANA2_CARD_11,img.LOMA_CABANA2_CARD_12,img.LOMA_CABANA2_CARD_13,img.LOMA_CABANA2_CARD_14,img.LOMA_CABANA2_CARD_15,img.LOMA_CABANA2_CARD_16,img.LOMA_CABANA2_CARD_17,img.LOMA_CABANA2_CARD_18,img.LOMA_CABANA2_CARD_19,img.LOMA_CABANA2_CARD_20,img.LOMA_CABANA2_CARD_21],
     pin: ' Se encuentra a 10 cuadras del centro.',
+    mapUrl: 'https://maps.app.goo.gl/ud7NdXpTAiJYNyy6A',
     capacidad: '4 personas · Monoambiente',
     ambientes: 'Monoambiente',
     dormitorios: 'Cama matrimonial + cama marinera',
@@ -92,6 +93,7 @@ export const lomaCabins: LomaCabin[] = [
     img: img.LOMA_CABANA_3,
     gallery: [img.LOMA_CABANA3_CARD_1,img.LOMA_CABANA3_CARD_2,img.LOMA_CABANA3_CARD_3,img.LOMA_CABANA3_CARD_4,img.LOMA_CABANA3_CARD_5,img.LOMA_CABANA3_CARD_6,img.LOMA_CABANA3_CARD_7,img.LOMA_CABANA3_CARD_8,img.LOMA_CABANA3_CARD_9,img.LOMA_CABANA3_CARD_10,img.LOMA_CABANA3_CARD_11,img.LOMA_CABANA3_CARD_12,img.LOMA_CABANA3_CARD_13,img.LOMA_CABANA3_CARD_14],
     pin: 'Se encuentra a 10 cuadras del centro.',
+    mapUrl: 'https://maps.app.goo.gl/ud7NdXpTAiJYNyy6A',
     capacidad: 'Hasta 5 personas · 2 dormitorios',
     ambientes: '3',
     dormitorios: '2 (dos camas matrimoniales y una cama individual)',
@@ -109,6 +111,7 @@ export const lomaCabins: LomaCabin[] = [
     img: img.LOMA_CABANA_4,
     gallery: [img.LOMA_CABANA4_CARD_1,img.LOMA_CABANA4_CARD_2,img.LOMA_CABANA4_CARD_3,img.LOMA_CABANA4_CARD_4,img.LOMA_CABANA4_CARD_5,img.LOMA_CABANA4_CARD_6,img.LOMA_CABANA4_CARD_7,img.LOMA_CABANA4_CARD_8,img.LOMA_CABANA4_CARD_9,img.LOMA_CABANA4_CARD_10,img.LOMA_CABANA4_CARD_11,img.LOMA_CABANA4_CARD_12,img.LOMA_CABANA4_CARD_13,img.LOMA_CABANA4_CARD_14,img.LOMA_CABANA4_CARD_15],
     pin: 'Se encuentra a 10 cuadras del centro.',
+    mapUrl: 'https://maps.app.goo.gl/ud7NdXpTAiJYNyy6A',
     capacidad: 'Hasta 4 personas',
     ambientes: '3',
     dormitorios: '2 (cama matrimonial en una habitación y dos camas individuales en la otra)',
@@ -125,7 +128,8 @@ export const lomaCabins: LomaCabin[] = [
     eyebrow: 'Ideal para familias y amigos.',
     img: img.LOMA_CABANA_5,
     gallery: [img.LOMA_CABANA5_CARD_1,img.LOMA_CABANA5_CARD_2,img.LOMA_CABANA5_CARD_3,img.LOMA_CABANA5_CARD_4,img.LOMA_CABANA5_CARD_5,img.LOMA_CABANA5_CARD_6,img.LOMA_CABANA5_CARD_7,img.LOMA_CABANA5_CARD_8,img.LOMA_CABANA5_CARD_9,img.LOMA_CABANA5_CARD_10,img.LOMA_CABANA5_CARD_11,img.LOMA_CABANA5_CARD_12,img.LOMA_CABANA5_CARD_13,img.LOMA_CABANA5_CARD_14,img.LOMA_CABANA5_CARD_15,img.LOMA_CABANA5_CARD_16,img.LOMA_CABANA5_CARD_17],
-    pin: '[Ubicación dentro del complejo]',
+    pin: ' Se encuentra a 10 cuadras del centro.',
+    mapUrl: 'https://maps.app.goo.gl/ud7NdXpTAiJYNyy6A',
     capacidad: 'Hasta 4 personas',
     ambientes: '3',
     dormitorios: '2 (una con cama matrimonial y otra con dos camas individuales)',
@@ -146,7 +150,8 @@ export const candeUnits: CandeUnit[] = [
     eyebrow: 'Ideal para pareja, familia y amigos',
     img: img.CANDE_UNIT_1,
     gallery: [img.CANDE_CABANA5_CARD_1,img.CANDE_CABANA5_CARD_2,img.CANDE_CABANA5_CARD_3,img.CANDE_CABANA5_CARD_4,img.CANDE_CABANA5_CARD_5,img.CANDE_CABANA5_CARD_6,img.CANDE_CABANA5_CARD_7,img.CANDE_CABANA5_CARD_8,img.CANDE_CABANA5_CARD_9,img.CANDE_CABANA5_CARD_10,img.CANDE_CABANA5_CARD_11,img.CANDE_CABANA5_CARD_12],
-    pin: 'Camino a las Termas.',
+    pin: 'Camino a las Termas.', 
+    mapUrl: 'https://maps.app.goo.gl/n781qSoSv8DsmDN56',
     capacidad: 'Hasta 4 personas',
     ambientes: '3',
     dormitorios: '2 (una con cama matrimonial y otra con dos camas individuales)',
@@ -163,6 +168,7 @@ export const candeUnits: CandeUnit[] = [
     img: img.CANDE_UNIT_2,
     gallery: [img.CANDE_CABANA6_CARD_1,img.CANDE_CABANA6_CARD_2,img.CANDE_CABANA6_CARD_3,img.CANDE_CABANA6_CARD_4,img.CANDE_CABANA6_CARD_5,img.CANDE_CABANA6_CARD_6,img.CANDE_CABANA6_CARD_7,img.CANDE_CABANA6_CARD_8,img.CANDE_CABANA6_CARD_9],
     pin: ' Camino a las Termas.',
+    mapUrl: 'https://maps.app.goo.gl/n781qSoSv8DsmDN56',
     capacidad: 'Hasta 4 personas',
     ambientes: '2',
     dormitorios: '1 habitación con cama matrimonial + 2 camas individuales en el comedor',
@@ -179,6 +185,7 @@ export const candeUnits: CandeUnit[] = [
     img: img.CANDE_UNIT_3,
     gallery: [img.CANDE_CABANA7_CARD_1,img.CANDE_CABANA7_CARD_2,img.CANDE_CABANA7_CARD_3,img.CANDE_CABANA7_CARD_4,img.CANDE_CABANA7_CARD_5,img.CANDE_CABANA7_CARD_6,img.CANDE_CABANA7_CARD_7,img.CANDE_CABANA7_CARD_8,img.CANDE_CABANA7_CARD_9],
     pin: ' Camino a las Termas.',
+    mapUrl: 'https://maps.app.goo.gl/n781qSoSv8DsmDN56',
     capacidad: 'Hasta 4 personas',
     ambientes: '2',
     dormitorios: '1 habitación con cama matrimonial + 2 camas individuales en el comedor',
@@ -190,32 +197,28 @@ export const candeUnits: CandeUnit[] = [
   },
 ];
 
-const baseTestimonialsLoma: Testimonial[] = [
-  { title: 'Un fin de semana perfecto', content: '[Testimonio del huésped — su experiencia general en La Loma. Completar con reseña real.]', tag: 'Familia', name: '[Nombre]', role: '[Mes / Año]' },
-  { title: 'Naturaleza y descanso', content: '[Testimonio — lo que más disfrutaron del entorno y las piletas.]', tag: 'Pareja', name: '[Nombre]', role: '[Mes / Año]' },
-  { title: 'Volvemos seguro', content: '[Testimonio — por qué elegirían La Loma de nuevo.]', tag: 'Amigos', name: '[Nombre]', role: '[Mes / Año]' },
-  { title: 'Atención impecable', content: '[Testimonio — sobre la atención y las comodidades.]', tag: 'Familia', name: '[Nombre]', role: '[Mes / Año]' },
-  { title: 'Ideal para desconectar', content: '[Testimonio — la calma y el verde del lugar.]', tag: 'Pareja', name: '[Nombre]', role: '[Mes / Año]' },
+export const testimonialsLoma = [
+  { src: '/img/testimonios_laloma/testimonio_laloma_1.webp', alt: 'Reseña de Google - La Loma' },
+  { src: '/img/testimonios_laloma/testimonio_laloma_2.webp', alt: 'Reseña de Google - La Loma' },
+  { src: '/img/testimonios_laloma/testimonio_laloma_3.webp', alt: 'Reseña de Google - La Loma' },
+  { src: '/img/testimonios_laloma/testimonio_laloma_4.webp', alt: 'Reseña de Google - La Loma' },
 ];
-export const testimonialsLoma: Testimonial[] = [...baseTestimonialsLoma, ...baseTestimonialsLoma];
+// Duplicamos para que el scroll infinito funcione fluido
+export const testimonialsLomaFull = [...testimonialsLoma, ...testimonialsLoma];
 
-const baseTestimonialsArandu: Testimonial[] = [
-  { title: 'Privacidad total', content: '[Testimonio — la experiencia de tener la cabaña entera para uno, junto al arroyo.]', tag: 'Pareja', name: '[Nombre]', role: '[Mes / Año]' },
-  { title: 'El arroyo lo es todo', content: '[Testimonio — el sonido del agua y el entorno natural.]', tag: 'Escapada', name: '[Nombre]', role: '[Mes / Año]' },
-  { title: 'Desconexión real', content: '[Testimonio — cómo lograron desconectar del mundo.]', tag: 'Pareja', name: '[Nombre]', role: '[Mes / Año]' },
-  { title: 'Volvemos sin dudarlo', content: '[Testimonio — por qué elegirían Arandú otra vez.]', tag: 'Aniversario', name: '[Nombre]', role: '[Mes / Año]' },
-  { title: 'Un refugio perfecto', content: '[Testimonio — el confort de la cabaña y la calma del lugar.]', tag: 'Escapada', name: '[Nombre]', role: '[Mes / Año]' },
-];
-export const testimonialsArandu: Testimonial[] = [...baseTestimonialsArandu, ...baseTestimonialsArandu];
+export const testimonialsArandu = [
+  { src: '/img/testimonios_arandu/testimonio_arandu_1.webp', alt: 'Reseña de Google - Arandú' },
+  { src: '/img/testimonios_arandu/testimonio_arandu_2.webp', alt: 'Reseña de Google - Arandú' },
 
-const baseTestimonialsCande: Testimonial[] = [
-  { title: 'Comodidad total', content: '[Testimonio — lo cómodas y equipadas que están las cabañas.]', tag: 'Pareja', name: '[Nombre]', role: '[Mes / Año]' },
-  { title: 'La pileta climatizada', content: '[Testimonio — disfrutar del agua templada en cualquier época del año.]', tag: 'Familia', name: '[Nombre]', role: '[Mes / Año]' },
-  { title: 'Volvemos seguro', content: '[Testimonio — por qué elegirían Bungalows Cande otra vez.]', tag: 'Escapada', name: '[Nombre]', role: '[Mes / Año]' },
-  { title: 'Atención impecable', content: '[Testimonio — el trato y la predisposición de los anfitriones.]', tag: 'Pareja', name: '[Nombre]', role: '[Mes / Año]' },
-  { title: 'Descanso asegurado', content: '[Testimonio — la tranquilidad y el confort del complejo.]', tag: 'Familia', name: '[Nombre]', role: '[Mes / Año]' },
 ];
-export const testimonialsCande: Testimonial[] = [...baseTestimonialsCande, ...baseTestimonialsCande];
+export const testimonialsAranduFull = [...testimonialsArandu, ...testimonialsArandu];
+
+export const testimonialsCande = [
+  { src: '/img/testimonios_cande/testimonio_bungalows_1.webp', alt: 'Reseña de Google - Cande' },
+  { src: '/img/testimonios_cande/testimonio_bungalows_2.webp', alt: 'Reseña de Google - Cande' },
+  { src: '/img/testimonios_cande/testimonio_bungalows_3.webp', alt: 'Reseña de Google - Cande' },
+];
+export const testimonialsCandeFull = [...testimonialsCande, ...testimonialsCande];
 
 export const aranduGallery: GalleryImage[] = [
   { src: img.ARANDU_GALLERY_HAMACA, alt: 'Arandú · hamaca junto al río' },

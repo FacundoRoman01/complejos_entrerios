@@ -28,6 +28,7 @@ export interface CabinBase {
   img: string;
   gallery: string[];
   pin: string;
+  mapUrl?: string;
   capacidad: string;
   ambientes: string;
   dormitorios: string;
@@ -70,6 +71,7 @@ export interface ModalCabinData {
   name: string;
   eyebrow: string;
   pin: string;
+  mapUrl?: string;
   capacidad: string;
   ambientes: string;
   dormitorios: string;

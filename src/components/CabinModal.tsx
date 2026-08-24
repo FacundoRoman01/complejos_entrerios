@@ -1,4 +1,5 @@
 import type { ModalCabinData } from '../types';
+import { openWhatsAppForCabin } from '../utils/whatsapp';
 
 interface CabinModalProps {
   cabin: ModalCabinData | null;
@@ -8,10 +9,10 @@ interface CabinModalProps {
   onPrev: () => void;
   onNext: () => void;
   onGoTo: (i: number) => void;
-  onWhatsApp: () => void;
+  complexName: string;
 }
 
-export function CabinModal({ cabin, gallery, activeSlide, onClose, onPrev, onNext, onGoTo, onWhatsApp }: CabinModalProps) {
+export function CabinModal({ cabin, gallery, activeSlide, onClose, onPrev, onNext, onGoTo, complexName }: CabinModalProps) {
   if (!cabin) return null;
   const activeImg = gallery[activeSlide] ?? gallery[0];
 
@@ -67,7 +68,7 @@ export function CabinModal({ cabin, gallery, activeSlide, onClose, onPrev, onNex
           ✕
         </button>
 
-        {/* Sección Superior: Imagen y Datos Principales (Grid adaptable con Tailwind) */}
+        {/* Sección Superior: Imagen y Datos Principales */}
         <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1.3fr] items-stretch">
           {/* Carrusel de imágenes */}
           <div style={{ position: 'relative', minHeight: 300, background: '#141c0e' }} className="h-[280px] md:h-auto">
@@ -99,7 +100,37 @@ export function CabinModal({ cabin, gallery, activeSlide, onClose, onPrev, onNex
           <div style={{ padding: 'clamp(24px, 4vw, 56px) clamp(20px, 3.5vw, 50px)', color: '#e9ecdd', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <div style={{ fontFamily: "'Raleway',sans-serif", fontWeight: 700, fontSize: 'clamp(28px, 4.2vw, 56px)', lineHeight: 1.05, color: '#f4f1e6' }}>{cabin.name}</div>
             <div style={{ fontSize: 12, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#a7b378', marginTop: 10 }}>{cabin.eyebrow}</div>
-            <div style={{ fontSize: 13, color: '#c7cdb4', marginTop: 10 }}>📍 {cabin.pin}</div>
+            
+            {/* PIN Y BOTÓN DE UBICACIÓN */}
+            <div style={{ marginTop: 12, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 10 }}>
+              <div style={{ fontSize: 13, color: '#c7cdb4' }}>📍 {cabin.pin}</div>
+              {cabin.mapUrl && (
+                <a
+                  href={cabin.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: 'none',
+                    border: '1px solid rgba(167,179,120,0.5)',
+                    color: '#e9ecdd',
+                    padding: '8px 18px',
+                    borderRadius: 30,
+                    fontFamily: "'Raleway',sans-serif",
+                    fontSize: 10,
+                    letterSpacing: '0.18em',
+                    textTransform: 'uppercase',
+                    textDecoration: 'none',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s'
+                  }}
+                >
+                  Ver ubicación
+                </a>
+              )}
+            </div>
             
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', border: '1px solid rgba(195,209,154,0.22)', borderRadius: 14, marginTop: 20, overflow: 'hidden' }}>
               <div style={{ padding: '14px 16px', borderRight: '1px solid rgba(195,209,154,0.15)', borderBottom: '1px solid rgba(195,209,154,0.15)' }}>
@@ -150,7 +181,7 @@ export function CabinModal({ cabin, gallery, activeSlide, onClose, onPrev, onNex
               <p style={{ fontSize: 13, color: '#c7cdb4', margin: '6px 0 0', fontWeight: 300 }}>Consultá disponibilidad — respondemos en menos de 2 horas.</p>
             </div>
             <button
-              onClick={onWhatsApp}
+              onClick={openWhatsAppForCabin(cabin.name, complexName)}
               style={{
                 cursor: 'pointer',
                 display: 'inline-flex',
