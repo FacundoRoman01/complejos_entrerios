@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="sunGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#fff37b" />
+      <stop offset="100%" stop-color="#f2b51d" />
+    </radialGradient>
+  </defs>
+
+  <!-- Círculo del Sol de fondo -->
+  <circle cx="250" cy="225" r="160" fill="url(#sunGradient)" />
+  
+  <!-- Estructura del Techo -->
+  <path d="M155 185 L250 95 L345 185 L355 200 L325 210 L250 145 L175 210 L145 200 Z" fill="#4d3528" />
+  
+  <!-- Chimenea -->
+  <path d="M295 110 L320 110 L320 150 L295 130 Z" fill="#4d3528" />
+
+  <!-- Cuerpo de la casa -->
+  <path d="M170 205 C165 210, 165 355, 180 385 C195 405, 305 405, 320 385 C335 355, 335 210, 330 205 Z" fill="#4d3528" />
+  
+  <!-- Alero / Visera curva -->
+  <path d="M140 192 C200 182, 300 182, 360 192 C368 196, 368 206, 360 210 C300 200, 200 200, 140 210 C132 206, 132 196, 140 192 Z" fill="#4d3528" />
+
+  <!-- Ventana principal -->
+  <path d="M210 240 L290 240 L288 320 L212 320 Z" fill="#fff37b" />
+  <!-- Marcos de la ventana -->
+  <rect x="246" y="240" width="8" height="80" fill="#4d3528" />
+  <rect x="212" y="276" width="76" height="8" fill="#4d3528" />
+</svg>

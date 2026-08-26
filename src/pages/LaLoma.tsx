@@ -14,7 +14,7 @@ import { useState } from 'react';
 
 export function LaLoma() {
   const presentacion = useReveal<HTMLDivElement>();
-  const alojHeader = useReveal<HTMLDivElement>();
+  // const alojHeader = useReveal<HTMLDivElement>();
   const espaciosHeading = useReveal<HTMLDivElement>();
   const tile1 = useReveal<HTMLDivElement>();
   const tile2 = useReveal<HTMLDivElement>();

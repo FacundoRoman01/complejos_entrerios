@@ -47,7 +47,7 @@ export const LOMA_CABANA_CARD_2 = `https://res.cloudinary.com/gdsp19ht/image/upl
 export const LOMA_CABANA_CARD_3 = `https://res.cloudinary.com/gdsp19ht/image/upload/${OPTIMIZED_PARAMS}/v1787166672/laloma_cabana1_b.webp`;
 export const LOMA_CABANA_CARD_4 = `https://res.cloudinary.com/gdsp19ht/image/upload/${OPTIMIZED_PARAMS}/v1787166674/laloma_cabana1_a.webp`;
 export const LOMA_CABANA_CARD_5 = `https://res.cloudinary.com/gdsp19ht/image/upload/${OPTIMIZED_PARAMS}/v1787166670/laloma_cabana1_e.webp`;
-export const LOMA_CABANA_CARD_6 = `https://res.cloudinary.com/gdsp19ht/image/upload/${OPTIMIZED_PARAMS}/v1787166670/laloma_cabana1_d.webp`;
+// export const LOMA_CABANA_CARD_6 = `https://res.cloudinary.com/gdsp19ht/image/upload/${OPTIMIZED_PARAMS}/v1787166670/laloma_cabana1_d.webp`;
 
 
 // la loma fotos dentro de el card CABAÑA2

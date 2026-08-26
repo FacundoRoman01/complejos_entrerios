@@ -55,7 +55,7 @@ export const lomaCabins: LomaCabin[] = [
     name: 'Cabaña 1',  // listooo
     eyebrow: 'Ideal para familias y amigos.',
     img: img.LOMA_CABANA_1,
-    gallery: [img.LOMA_CABANA_CARD_1,img.LOMA_CABANA_CARD_2,img.LOMA_CABANA_CARD_3,img.LOMA_CABANA_CARD_4,img.LOMA_CABANA_CARD_5,img.LOMA_CABANA_CARD_6],
+    gallery: [img.LOMA_CABANA_CARD_1,img.LOMA_CABANA_CARD_2,img.LOMA_CABANA_CARD_3,img.LOMA_CABANA_CARD_4,img.LOMA_CABANA_CARD_5],
     pin: 'Se encuentra a 10 cuadras del centro.',
     mapUrl: 'https://maps.app.goo.gl/ud7NdXpTAiJYNyy6A',
     capacidad: '4 personas',
