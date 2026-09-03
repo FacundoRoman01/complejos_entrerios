@@ -94,7 +94,7 @@ export function Home() {
     <div style={{ width: 70, height: 1, background: '#c3d19a', margin: '30px 0' }} />
 
     <p style={{ fontSize: 'clamp(15px, 1.8vw, 18px)', lineHeight: 1.85, color: '#dbe0ca', maxWidth: 520, fontWeight: 300, margin: 0 }}>
-      Descubrí nuestros alojamientos en distintos rincones de Entre Ríos y elegí la experiencia que más se adapte a vos.
+     Descubrí nuestros diferentes lugares en Villa Elisa y Liebig.
     </p>
 
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginTop: 34 }}>

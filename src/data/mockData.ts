@@ -11,7 +11,7 @@ export const heroHomeSlides: string[] = [
   img.HERO_HOME_SLIDE_1,
   img.HERO_HOME_SLIDE_2,
   img.HERO_HOME_SLIDE_3,
-  img.HERO_HOME_SLIDE_4,
+
 ];
 
 export const complejoSummaries: ComplejoSummary[] = [
@@ -55,7 +55,7 @@ export const lomaCabins: LomaCabin[] = [
     name: 'Cabaña 1',  // listooo
     eyebrow: 'Ideal para familias y amigos.',
     img: img.LOMA_CABANA_1,
-    gallery: [img.LOMA_CABANA_CARD_1,img.LOMA_CABANA_CARD_2,img.LOMA_CABANA_CARD_3,img.LOMA_CABANA_CARD_4,img.LOMA_CABANA_CARD_5],
+    gallery: [img.LOMA_CABANA_CARD_1,img.LOMA_CABANA_CARD_2,img.LOMA_CABANA_CARD_3,img.LOMA_CABANA_CARD_5,img.LOMA_CABANA_CARD_4,img.LOMA_CABANA_1],
     pin: 'Se encuentra a 10 cuadras del centro.',
     mapUrl: 'https://maps.app.goo.gl/ud7NdXpTAiJYNyy6A',
     capacidad: '4 personas',
@@ -73,7 +73,7 @@ export const lomaCabins: LomaCabin[] = [
     name: 'Cabaña 2',  //listoooo
     eyebrow: 'Ideal para familias y amigos.',
     img: img.LOMA_CABANA_2,
-    gallery: [img.LOMA_CABANA2_CARD_1,img.LOMA_CABANA2_CARD_2,img.LOMA_CABANA2_CARD_3,img.LOMA_CABANA2_CARD_4,img.LOMA_CABANA2_CARD_5,img.LOMA_CABANA2_CARD_6,img.LOMA_CABANA2_CARD_7,img.LOMA_CABANA2_CARD_8,img.LOMA_CABANA2_CARD_9,img.LOMA_CABANA2_CARD_10,img.LOMA_CABANA2_CARD_11,img.LOMA_CABANA2_CARD_12,img.LOMA_CABANA2_CARD_13,img.LOMA_CABANA2_CARD_14,img.LOMA_CABANA2_CARD_15,img.LOMA_CABANA2_CARD_16,img.LOMA_CABANA2_CARD_17,img.LOMA_CABANA2_CARD_18,img.LOMA_CABANA2_CARD_19,img.LOMA_CABANA2_CARD_20,img.LOMA_CABANA2_CARD_21],
+    gallery: [img.LOMA_CABANA2_CARD_1,img.LOMA_CABANA2_CARD_2,img.LOMA_CABANA2_CARD_3,img.LOMA_CABANA2_CARD_4,img.LOMA_CABANA2_CARD_5,img.LOMA_CABANA2_CARD_6,img.LOMA_CABANA2_CARD_7,img.LOMA_CABANA2_CARD_8,img.LOMA_CABANA2_CARD_9,img.LOMA_CABANA2_CARD_10,img.LOMA_CABANA2_CARD_11,img.LOMA_CABANA2_CARD_12,img.LOMA_CABANA2_CARD_13],
     pin: ' Se encuentra a 10 cuadras del centro.',
     mapUrl: 'https://maps.app.goo.gl/ud7NdXpTAiJYNyy6A',
     capacidad: '4 personas · Monoambiente',
@@ -91,7 +91,7 @@ export const lomaCabins: LomaCabin[] = [
     name: 'Cabaña 3', //listoooo
     eyebrow: 'Ideal para familias y amigos.',
     img: img.LOMA_CABANA_3,
-    gallery: [img.LOMA_CABANA3_CARD_1,img.LOMA_CABANA3_CARD_2,img.LOMA_CABANA3_CARD_3,img.LOMA_CABANA3_CARD_4,img.LOMA_CABANA3_CARD_5,img.LOMA_CABANA3_CARD_6,img.LOMA_CABANA3_CARD_7,img.LOMA_CABANA3_CARD_8,img.LOMA_CABANA3_CARD_9,img.LOMA_CABANA3_CARD_10,img.LOMA_CABANA3_CARD_11,img.LOMA_CABANA3_CARD_12,img.LOMA_CABANA3_CARD_13,img.LOMA_CABANA3_CARD_14],
+    gallery: [img.LOMA_CABANA3_CARD_1,img.LOMA_CABANA3_CARD_2,img.LOMA_CABANA3_CARD_3,img.LOMA_CABANA3_CARD_4,img.LOMA_CABANA3_CARD_5,img.LOMA_CABANA3_CARD_6,img.LOMA_CABANA3_CARD_7,img.LOMA_CABANA3_CARD_8,img.LOMA_CABANA3_CARD_9,img.LOMA_CABANA3_CARD_10],
     pin: 'Se encuentra a 10 cuadras del centro.',
     mapUrl: 'https://maps.app.goo.gl/ud7NdXpTAiJYNyy6A',
     capacidad: 'Hasta 5 personas · 2 dormitorios',
@@ -109,7 +109,7 @@ export const lomaCabins: LomaCabin[] = [
     name: 'Cabaña 4',  //LISTOOOO
     eyebrow: 'Ideal para familias y amigos.',
     img: img.LOMA_CABANA_4,
-    gallery: [img.LOMA_CABANA4_CARD_1,img.LOMA_CABANA4_CARD_2,img.LOMA_CABANA4_CARD_3,img.LOMA_CABANA4_CARD_4,img.LOMA_CABANA4_CARD_5,img.LOMA_CABANA4_CARD_6,img.LOMA_CABANA4_CARD_7,img.LOMA_CABANA4_CARD_8,img.LOMA_CABANA4_CARD_9,img.LOMA_CABANA4_CARD_10,img.LOMA_CABANA4_CARD_11,img.LOMA_CABANA4_CARD_12,img.LOMA_CABANA4_CARD_13,img.LOMA_CABANA4_CARD_14,img.LOMA_CABANA4_CARD_15],
+    gallery: [img.LOMA_CABANA4_CARD_1,img.LOMA_CABANA4_CARD_2,img.LOMA_CABANA4_CARD_3,img.LOMA_CABANA4_CARD_4,img.LOMA_CABANA4_CARD_5,img.LOMA_CABANA4_CARD_6,img.LOMA_CABANA4_CARD_7,img.LOMA_CABANA4_CARD_8,img.LOMA_CABANA4_CARD_9,img.LOMA_CABANA4_CARD_10,img.LOMA_CABANA4_CARD_11,img.LOMA_CABANA4_CARD_12],
     pin: 'Se encuentra a 10 cuadras del centro.',
     mapUrl: 'https://maps.app.goo.gl/ud7NdXpTAiJYNyy6A',
     capacidad: 'Hasta 4 personas',
@@ -124,10 +124,10 @@ export const lomaCabins: LomaCabin[] = [
     tags: ['  Garage semicubierto', 'Wifi','Más...'],
   },
   {
-    name: 'Cabaña 5', //listoooo
+    name: 'Ecomodulo', //listoooo
     eyebrow: 'Ideal para familias y amigos.',
     img: img.LOMA_CABANA_5,
-    gallery: [img.LOMA_CABANA5_CARD_1,img.LOMA_CABANA5_CARD_2,img.LOMA_CABANA5_CARD_3,img.LOMA_CABANA5_CARD_4,img.LOMA_CABANA5_CARD_5,img.LOMA_CABANA5_CARD_6,img.LOMA_CABANA5_CARD_7,img.LOMA_CABANA5_CARD_8,img.LOMA_CABANA5_CARD_9,img.LOMA_CABANA5_CARD_10,img.LOMA_CABANA5_CARD_11,img.LOMA_CABANA5_CARD_12,img.LOMA_CABANA5_CARD_13,img.LOMA_CABANA5_CARD_14,img.LOMA_CABANA5_CARD_15,img.LOMA_CABANA5_CARD_16,img.LOMA_CABANA5_CARD_17],
+    gallery: [img.LOMA_CABANA5_CARD_1,img.LOMA_CABANA5_CARD_2,img.LOMA_CABANA5_CARD_3,img.LOMA_CABANA5_CARD_4,img.LOMA_CABANA5_CARD_5,img.LOMA_CABANA5_CARD_6,img.LOMA_CABANA5_CARD_7,img.LOMA_CABANA5_CARD_8,img.LOMA_CABANA5_CARD_9,img.LOMA_CABANA5_CARD_10,img.LOMA_CABANA5_CARD_11],
     pin: ' Se encuentra a 10 cuadras del centro.',
     mapUrl: 'https://maps.app.goo.gl/ud7NdXpTAiJYNyy6A',
     capacidad: 'Hasta 4 personas',
@@ -149,7 +149,7 @@ export const candeUnits: CandeUnit[] = [
     cap: 'Hasta 4 personas',
     eyebrow: 'Ideal para pareja, familia y amigos',
     img: img.CANDE_UNIT_1,
-    gallery: [img.CANDE_CABANA5_CARD_1,img.CANDE_CABANA5_CARD_2,img.CANDE_CABANA5_CARD_3,img.CANDE_CABANA5_CARD_4,img.CANDE_CABANA5_CARD_5,img.CANDE_CABANA5_CARD_6,img.CANDE_CABANA5_CARD_7,img.CANDE_CABANA5_CARD_8,img.CANDE_CABANA5_CARD_9,img.CANDE_CABANA5_CARD_10,img.CANDE_CABANA5_CARD_11,img.CANDE_CABANA5_CARD_12],
+    gallery: [img.CANDE_CABANA5_CARD_1,img.CANDE_CABANA5_CARD_2,img.CANDE_CABANA5_CARD_3,img.CANDE_CABANA5_CARD_4,img.CANDE_CABANA5_CARD_5,img.CANDE_CABANA5_CARD_6,img.CANDE_CABANA5_CARD_8,img.CANDE_CABANA5_CARD_9,img.CANDE_CABANA5_CARD_10,img.CANDE_CABANA5_CARD_11,img.CANDE_CABANA5_CARD_12],
     pin: 'Camino a las Termas.', 
     mapUrl: 'https://maps.app.goo.gl/n781qSoSv8DsmDN56',
     capacidad: 'Hasta 4 personas',
@@ -166,7 +166,7 @@ export const candeUnits: CandeUnit[] = [
     cap: 'Hasta 4 personas',
     eyebrow: 'Ideal para pareja, familia y amigos',
     img: img.CANDE_UNIT_2,
-    gallery: [img.CANDE_CABANA6_CARD_1,img.CANDE_CABANA6_CARD_2,img.CANDE_CABANA6_CARD_3,img.CANDE_CABANA6_CARD_4,img.CANDE_CABANA6_CARD_5,img.CANDE_CABANA6_CARD_6,img.CANDE_CABANA6_CARD_7,img.CANDE_CABANA6_CARD_8,img.CANDE_CABANA6_CARD_9],
+    gallery: [img.CANDE_CABANA6_CARD_1,img.CANDE_CABANA6_CARD_2,img.CANDE_CABANA6_CARD_3,img.CANDE_CABANA6_CARD_4,img.CANDE_CABANA6_CARD_5,img.CANDE_CABANA6_CARD_6, img.CANDE_CABANA6_CARD_7,img.CANDE_CABANA6_CARD_8,img.CANDE_CABANA6_CARD_9,img.CANDE_CABANA6_CARD_10],
     pin: ' Camino a las Termas.',
     mapUrl: 'https://maps.app.goo.gl/n781qSoSv8DsmDN56',
     capacidad: 'Hasta 4 personas',
@@ -183,7 +183,7 @@ export const candeUnits: CandeUnit[] = [
     cap: 'Hasta 4 personas',
     eyebrow: 'Ideal para pareja, familia y amigos',
     img: img.CANDE_UNIT_3,
-    gallery: [img.CANDE_CABANA7_CARD_1,img.CANDE_CABANA7_CARD_2,img.CANDE_CABANA7_CARD_3,img.CANDE_CABANA7_CARD_4,img.CANDE_CABANA7_CARD_5,img.CANDE_CABANA7_CARD_6,img.CANDE_CABANA7_CARD_7,img.CANDE_CABANA7_CARD_8,img.CANDE_CABANA7_CARD_9],
+    gallery: [img.CANDE_CABANA7_CARD_1,img.CANDE_CABANA7_CARD_2,img.CANDE_CABANA7_CARD_3, img.CANDE_CABANA7_CARD_5,img.CANDE_CABANA7_CARD_6,img.CANDE_CABANA7_CARD_7,img.CANDE_CABANA7_CARD_8,img.CANDE_CABANA7_CARD_9],
     pin: ' Camino a las Termas.',
     mapUrl: 'https://maps.app.goo.gl/n781qSoSv8DsmDN56',
     capacidad: 'Hasta 4 personas',
@@ -221,16 +221,19 @@ export const testimonialsCande = [
 export const testimonialsCandeFull = [...testimonialsCande, ...testimonialsCande];
 
 export const aranduGallery: GalleryImage[] = [
-  { src: img.ARANDU_GALLERY_HAMACA, alt: 'Arandú · hamaca junto al río' },
-  // { src: img.ARANDU_GALLERY_AFRAME, alt: 'Arandú · cabaña A-frame' },
-  { src: img.ARANDU_GALLERY_DORMITORIO, alt: 'Arandú · dormitorio' },
-  { src: img.ARANDU_GALLERY_BAÑO, alt: 'Arandú · BAÑO' },
   { src: img.ARANDU_GALLERY_LIVING, alt: 'Arandú · living comedor' },
-    { src: img.ARANDU_GALLERY_PIEZA, alt: 'Arandú · living comedor' },
-     { src: img.ARANDU_GALLERY_LIVING2, alt: 'Arandú · PIEZa' },
-  { src: img.ARANDU_1, alt: 'Arandú · entorno natural' },
+  { src: img.ARANDU_GALLERY_LIVING2, alt: 'Arandú · PIEZa' },
+  { src: img.ARANDU_GALLERY_DORMITORIO, alt: 'Arandú · dormitorio' },
+  { src: img.ARANDU_GALLERY_PIEZA, alt: 'Arandú · living comedor' },
+  { src: img.ARANDU_GALLERY_BAÑO, alt: 'Arandú · BAÑO' },
+  { src: img.ARANDU_GALLERY_HAMACA, alt: 'Arandú · hamaca junto al río' },
+   { src: img.ARANDU_GALLERY_PATIO, alt: 'Arandú · PATIO junto al río' },
+  // { src: img.ARANDU_GALLERY_AFRAME, alt: 'Arandú · cabaña A-frame' },
   { src: img.ARANDU_2, alt: 'Arandú · deck sobre el agua' },
   { src: img.ARANDU_2_ALT, alt: 'Arandú · deck sobre el río' },
+  { src: img.ARANDU_GALLERY_PICINA1, alt: 'Arandú · entorno natural' },
+  { src: img.ARANDU_1, alt: 'Arandú · entorno natural' },
+
   // { src: img.ARANDU_GALLERY_AFRAME, alt: 'Arandú · exterior de la cabaña' },
 ];
 
